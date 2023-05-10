@@ -1,0 +1,31 @@
+<div class="alert alert-warning" *ngIf="countries.length == 0; else table">Sin resultados para mostrar</div>
+
+<ng-template #table>
+  <div class="row mt-5">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Icono</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Bandera</th>
+            <th scope="col">Capital</th>
+            <th scope="col">Población</th>
+            <th scope="col">Ver más</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let country of countries;index as i">
+          <tr>
+            <td>{{ i + 1 }}</td>
+            <td>{{ country.flag }}</td>
+            <td>{{ country.name.common }}</td>
+            <td><img [src]="country.flags.svg" alt="country.capital" width="70px"></td>
+            <td>{{ country.capital }}</td>
+            <td>@mdo</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</ng-template>

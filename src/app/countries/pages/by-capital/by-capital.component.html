@@ -1,0 +1,10 @@
+<h2>Por capital</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <app-search-input [parameter]="'Búsqueda por capital'" (searchCountry)="searchValue($event  )"></app-search-input>
+  </div>
+</div>
+
+<app-country-table [countries]="countries"></app-country-table>
