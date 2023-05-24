@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'by-capital', component: ByCapitalComponent },
   { path: 'by-country', component: ByCountryComponent },
   { path: 'by-region', component: ByRegionComponent },
-  { path: 'by-id/:id', component: CountryPageComponent },
+  { path: 'details-country/:country', component: CountryPageComponent },
   { path: '**', redirectTo: 'by-capital' },
 ];
 

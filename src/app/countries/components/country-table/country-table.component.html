@@ -22,7 +22,10 @@
             <td>{{ country.name.common }}</td>
             <td><img [src]="country.flags.svg" alt="country.capital" width="70px"></td>
             <td>{{ country.capital }}</td>
-            <td>@mdo</td>
+            <td>{{ country.population | number }}</td>
+            <td>
+              <button type="button" class="btn btn-primary" (click)="detailsCountry(country.name.common)">Detalles</button>
+            </td>
           </tr>
         </tbody>
       </table>

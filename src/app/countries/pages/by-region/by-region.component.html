@@ -1,1 +1,10 @@
-<p>by-region works!</p>
+<h2>Búsqueda de paises por región</h2>
+<hr>
+
+<div class="btn-group my-3" role="group" aria-label="Basic example" style="margin: auto;">
+  <button *ngFor="let region of regions" type="button" class="btn btn-primary" (click)="searchValue(region)">
+    {{ region }}
+  </button>
+</div>
+
+<app-country-table [countries]="countries"></app-country-table>

@@ -1,1 +1,13 @@
-<p>by-country works!</p>
+<h2>Por nombre de país</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <app-search-input
+      [parameter]="'Búsqueda por nombre de país'"
+      (searchCountry)="searchValue($event)"
+    ></app-search-input>
+  </div>
+</div>
+
+<app-country-table [countries]="countries"></app-country-table>

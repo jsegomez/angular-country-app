@@ -1,1 +1,7 @@
-<input type="text" class="form-control my-3" [placeholder]="parameter" (keyup.enter)="sendText()" #txtBuscar>
+<input
+  type="text"
+  class="form-control my-3"
+  [placeholder]="parameter"
+  (keyup)="sendText(txtInputSearch.value)"
+  #txtInputSearch
+>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CountriesService } from 'src/app/countries/services/countries.service';
 import { Country } from '../../interfaces/country-interface';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-by-capital',
@@ -13,11 +14,8 @@ export class ByCapitalComponent {
   constructor(private countryService: CountriesService){}
 
   searchValue(value: string){
-    this.countryService.searchCapital(value).subscribe(
-      (result: Country[])=> {
-        this.countries = result
-        console.log(result)
-      }
+    this.countryService.searchCountries(value, 'capital').subscribe(
+      (result: Country[])=> this.countries = result
     );
   }
 }

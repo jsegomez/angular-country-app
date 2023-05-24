@@ -1,1 +1,30 @@
-<p>country-page works!</p>
+<ng-template #loading>
+  <div class="loading mt-4">
+    <img src="assets/images/loading.gif" alt="" srcset="">
+  </div>
+</ng-template>
+
+<div class="row animate__animated animate__fadeIn" *ngIf="country; else loading">
+  <div class="col-12">
+    <h2>País: {{ country.name.common }}</h2>
+    <img [src]="country.flags.svg" [alt]="country.name.common" width="500px">
+  </div>
+
+  <div class="col-12 mt-3">
+    <h3>Detalles</h3>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <strong>Población: {{ country.population | number }}</strong>
+      </li>
+      <li class="list-group-item">
+        <strong>Región: {{ country.region }}</strong>
+      </li>
+      <li class="list-group-item">
+        <strong>Subregión: {{ country.subregion }}</strong>
+      </li>
+      <li class="list-group-item">
+        <strong>Area: {{ country.area | number }}</strong>
+      </li>
+    </ul>
+  </div>
+</div>
